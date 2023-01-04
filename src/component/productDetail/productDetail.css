@@ -1,0 +1,137 @@
+.productDetail {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-style: italic;
+}
+
+.productDetailContainer{
+    width: 100%;
+    align-items: center;
+    margin: 1rem 2rem 0 2rem;
+}
+
+.productDetailItem {
+    display: flex;
+}
+
+.productDetailImg {
+    display: flex;
+    width: 100%;
+}
+
+.productDetailImgList>img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.ImgTotal {
+    margin-left: 1rem;
+}
+
+.productDetailList {
+    margin-left: 2rem;
+}
+
+.productDetailList>h4 {
+    font-weight: 500;
+    margin-bottom: -10px;
+}
+
+.productDetailList>h6 {
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.productDetailList>p {
+    font-size: 8px;
+}
+
+.productDetailListCategory {
+    display: flex;
+    margin-top: -20px;
+}
+
+.productDetailListCategory>h6 {
+    font-weight: 500;
+}
+
+.productDetailListCategory>p {
+    font-size: 10px;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.productQuantity {
+    width: 180px;
+    display: flex;
+    border: 1px solid rgb(164, 164, 164);
+    height: 20px;
+    margin-top: -15px;
+}
+
+.productQuantity>input {
+    font-size: 8px;
+    padding-left: 5px;
+    width: 80px;
+    border: none;
+    outline: none;
+    font-style: italic;
+}
+
+.productQuantityIcon {
+    display: flex;
+    margin-top: -17px;
+}
+
+.productQuantityIcon>p {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 19px;
+    font-size: 10px;
+}
+
+.icon {
+    font-size: 10px;
+    margin-top: 22px;
+    cursor: pointer;
+}
+
+.productQuantity>button {
+    width: 100px;
+    margin-left: 10px;
+    border: none;
+    background-color: #353535;
+    color: aliceblue;
+    font-size: 7px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.productDescription {
+    margin-top: 30px;
+}
+
+.productDescription>h6:nth-child(1) {
+    display: inline-block;
+    padding: 7px;
+    background-color: #353535;
+    color: aliceblue;
+    font-weight: lighter;
+    font-size: 10px;
+}
+
+.productDescription>h6 {
+    margin-top: -15px;
+    font-weight: 500;
+}
+
+.productDescription>p {
+    padding-left: 5px;
+    font-size: 8px;
+    line-height: 9px;
+}
+
+.relatedProduct>h6 {
+    font-weight: 500;
+}
