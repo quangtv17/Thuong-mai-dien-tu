@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { useSelector } from 'react-redux';
 
+import Loading from './component/loading/Loading';
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -43,7 +45,7 @@ function App() {
 	return (
 		<div className='App'>
 			<BrowserRouter>
-				<Suspense fallback={<p className='centered'>Loading...</p>}>
+				<Suspense fallback={<div className='Loading'><Loading /></div>}>
 					<ToastContainer />
 					<Routes>
 						<Route path='/' element={<Home />} />
