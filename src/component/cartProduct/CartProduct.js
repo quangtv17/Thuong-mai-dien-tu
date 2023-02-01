@@ -78,7 +78,7 @@ function CartProduct() {
                                                         width="8"
                                                         height="8" 
                                                         fill="currentColor" 
-                                                        className="iconQuantity" 
+                                                        className={styles.iconQuantity} 
                                                         viewBox="0 0 16 16"
                                                         onClick={() => handleDecreaseQuantity(cartItem)}
                                                     >
@@ -93,7 +93,7 @@ function CartProduct() {
                                                         width="8"
                                                         height="8"
                                                         fill="currentColor"
-                                                        className="iconQuantity" 
+                                                        className={styles.iconQuantity} 
                                                         viewBox="0 0 16 16"
                                                         onClick={() => handleIncreasingQuantity(cartItem)}
                                                     >

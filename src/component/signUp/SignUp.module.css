@@ -18,6 +18,8 @@
     margin: 2rem 0rem 2rem 0rem;
 }
 
+
+
 .signupContent>h2 {
     font-style: italic;
     font-weight: lighter;
@@ -27,10 +29,33 @@
 
 .signupInput>input {
     width: 14rem;
-    height: 3rem;
+    height: 2.5rem;
     padding-left: 1rem;
     border: 1px solid rgb(203, 197, 197);
     outline: none;
+}
+
+.signupInput {
+    position: relative;
+}
+
+.signupInput label {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+    pointer-events: none;
+    transition: 0.5s;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.signupInput input:focus ~ label,
+.signupInput input:invalid ~ label {
+    top: -8px;
+    left: 45px;
+    font-size: 10px;
+    background-color: white;
 }
 
 .signupInput>input:nth-child(1) {
@@ -48,7 +73,9 @@
     color: red;
     text-align: left;
     margin-left: 2.5rem;
-    font-size: 13px;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 100;
 }
 
 .signupBtn {
@@ -63,19 +90,20 @@
 
 .clickLogin {
     display: flex;
-    font-size: 13px;
+    font-size: 1.5rem;
     justify-content: center;
     font-style: italic;
 }
 
 .clickLogin>h6 {
     font-weight: lighter;
+    margin-top: 13px;
 }
 
 .linkSignIn {
     color: rgb(51, 51, 255);
-    margin: 19px 0px 0px 3px;
+    margin: 13px 0px 0px 3px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 1rem;
 }
 

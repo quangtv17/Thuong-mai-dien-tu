@@ -79,19 +79,19 @@ function Login() {
                             <div className={styles.loginInput}>
                                 <input 
                                     type="email" 
-                                    placeholder="Email"
                                     value={email}
                                     onChange={onChangeEmail}
                                 ></input>
+                                <label>Email</label>
                                 <p>{validateMsg.email}</p>
                             </div>
                             <div className={styles.loginInput}>
                                 <input
                                     type="password"
-                                    placeholder="Password"
                                     value={password}
                                     onChange={onChangePassword}
                                 ></input>
+                                <label>Password</label>
                                 <p>{validateMsg.password}</p>
                             </div>
                         </div>

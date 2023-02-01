@@ -104,24 +104,48 @@ function SignUp() {
                 <div className={styles.signupContainer}>
                     <div className={styles.signupContent}>
                         <h2 className="titleColor">Sign Up</h2>
-                        <div className={styles.signupInputs}>
+                        {/* <div className={styles.signupInputs}> */}
                             <div className={styles.signupInput}>
-                                <input type="text" placeholder="Full Name" value={fullname} onChange={onChangeName}></input>
+                                <input 
+                                    type="text" 
+                                    // placeholder="Full Name" 
+                                    value={fullname} 
+                                    onChange={onChangeName}
+                                ></input>
+                                <label>FullName</label>
                                 <p>{validateMsg.fullname}</p>
                             </div>
                             <div className={styles.signupInput}>
-                                <input type="email" placeholder="Email" value={email} onChange={onChangeEmail}></input>
+                                <input 
+                                    type="email" 
+                                    // placeholder="Email" 
+                                    value={email} 
+                                    onChange={onChangeEmail}
+                                ></input>
+                                <label>Email</label>
                                 <p>{validateMsg.email}</p>
                             </div>
                             <div className={styles.signupInput}>
-                                <input type="password" placeholder="Password" value={password} onChange={onChangePassword}></input>
+                                <input 
+                                    type="password" 
+                                    // placeholder="Password" 
+                                    value={password} 
+                                    onChange={onChangePassword}
+                                ></input>
+                                <label>Password</label>
                                 <p>{validateMsg.password}</p>
                             </div>
                             <div className={styles.signupInput}>
-                                <input type="text" placeholder="Phone" value={phone} onChange={onChangePhone}></input>
+                                <input 
+                                    type="text" 
+                                    // placeholder="Phone" 
+                                    value={phone} 
+                                    onChange={onChangePhone}
+                                ></input>
+                                <label>Phone</label>
                                 <p>{validateMsg.phone}</p>
                             </div>
-                        </div>
+                        {/* </div> */}
                         <button type='button' className={styles.signupBtn} onClick={handlerSignUp}>SIGN UP</button>
                         <div className={styles.clickLogin}>
                             <h6 className="titleColor">Login?</h6>
