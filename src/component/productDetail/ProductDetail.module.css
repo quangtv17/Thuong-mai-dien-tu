@@ -62,48 +62,13 @@
     margin-left: 5px;
 }
 
-.productQuantity {
-    width: 180px;
-    display: flex;
-    border: 1px solid rgb(164, 164, 164);
-    height: 20px;
-    margin-top: -15px;
-}
-
-.productQuantity>input {
-    font-size: 8px;
-    padding-left: 5px;
+.addCartBtn {
     width: 80px;
-    border: none;
-    outline: none;
-    font-style: italic;
-}
-
-.productQuantityIcon {
-    display: flex;
-    margin-top: -17px;
-}
-
-.productQuantityIcon>p {
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-top: 19px;
-    font-size: 10px;
-}
-
-.icon {
-    font-size: 10px;
-    margin-top: 22px;
-    cursor: pointer;
-}
-
-.productQuantity>button {
-    width: 100px;
-    margin-left: 10px;
+    height: 25px;
     border: none;
     background-color: #353535;
     color: aliceblue;
-    font-size: 7px;
+    font-size: 10px;
     font-style: italic;
     cursor: pointer;
 }

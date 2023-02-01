@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { popupActions } from "../../redux/popup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import './productPopup.css';
+import styles from './ProductPopup.module.css';
 
 function ProductPopup({ props }) {
     // console.log(props);
@@ -18,21 +18,20 @@ function ProductPopup({ props }) {
     return ( 
         <div>
             {/* Khi nhấn vào background sẽ close popup */}
-            <div className="popupBackground" onClick={handleClickCloseDetail}></div>
+            <div className={styles.popupBackground} onClick={handleClickCloseDetail}></div>
 
-            <div className="productPopupItem">
+            <div className={styles.productPopupItem}>
                 <img src={props.image} alt={props.name}/>
-                <div className="productPopupDetail">
-                    <button className="productPopupClose" onClick={handleClickCloseDetail}>x</button>
+                <div className={styles.productPopupDetail}>
+                    <button className={styles.productPopupClose} onClick={handleClickCloseDetail}>x</button>
                     <h4>{props.name}</h4>
                     <h6 className="titleColor">{Intl.NumberFormat('vi').format(props.price)} VND</h6>
                     <p className="titleColor">{props.short_desc}</p>
-                    <Link to={"/detail/" + props.id} className="productPopupBtn">
-                        <FontAwesomeIcon icon={faCartShopping} className="iconCartPopup" />
+                    <Link to={"/detail/" + props.id} className={styles.productPopupBtn}>
+                        <FontAwesomeIcon icon={faCartShopping} className={styles.iconCartPopup} />
                         <button>View Detail</button>
                     </Link>
                 </div>
-
             </div>
         </div>
     );

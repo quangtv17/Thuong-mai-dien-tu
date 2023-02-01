@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import isEmpty from 'validator/lib/isEmpty';
 import isEmail from 'validator/lib/isEmail';
 import Navbar from '../navbar/Navbar';
-import './signUp.css';
+import styles from './SignUp.module.css';
 
 
 function SignUp() {
@@ -100,33 +100,32 @@ function SignUp() {
     return ( 
         <>
             <Navbar />
-            <div className="signup">
-                <div className="signupContainer">
-                    <div className="signupContent">
+            <div className={styles.signup}>
+                <div className={styles.signupContainer}>
+                    <div className={styles.signupContent}>
                         <h2 className="titleColor">Sign Up</h2>
-                        <div className="signupInputs">
-                            <div className='signupInput'>
+                        <div className={styles.signupInputs}>
+                            <div className={styles.signupInput}>
                                 <input type="text" placeholder="Full Name" value={fullname} onChange={onChangeName}></input>
                                 <p>{validateMsg.fullname}</p>
                             </div>
-                            <div className='signupInput'>
+                            <div className={styles.signupInput}>
                                 <input type="email" placeholder="Email" value={email} onChange={onChangeEmail}></input>
                                 <p>{validateMsg.email}</p>
                             </div>
-                            <div className='signupInput'>
+                            <div className={styles.signupInput}>
                                 <input type="password" placeholder="Password" value={password} onChange={onChangePassword}></input>
                                 <p>{validateMsg.password}</p>
                             </div>
-                            <div className='signupInput'>
+                            <div className={styles.signupInput}>
                                 <input type="text" placeholder="Phone" value={phone} onChange={onChangePhone}></input>
                                 <p>{validateMsg.phone}</p>
                             </div>
                         </div>
-                            <button type='button' className="signupBtn" onClick={handlerSignUp}>SIGN UP</button>
-                        <div className="clickLogin">
+                        <button type='button' className={styles.signupBtn} onClick={handlerSignUp}>SIGN UP</button>
+                        <div className={styles.clickLogin}>
                             <h6 className="titleColor">Login?</h6>
-                            <span onClick={() => navigate('/login')} className="linkSignIn">Click</span>
-                                
+                            <span onClick={() => navigate('/login')} className={styles.linkSignIn}>Click</span>
                         </div>
                     </div>
                 </div>

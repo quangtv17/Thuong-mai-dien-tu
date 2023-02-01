@@ -1,8 +1,8 @@
-import './Loading.css';
+import styles from './Loading.module.css';
 
 function Loading() {
     return ( 
-        <div id="load">
+        <div className={styles.load}>
             <div>.</div>
             <div>.</div>
             <div>.</div>

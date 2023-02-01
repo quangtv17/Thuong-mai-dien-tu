@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { authActions } from '../../redux/auth';
 import isEmpty from 'validator/lib/isEmpty';
 import Navbar from "../navbar/Navbar";
-import './login.css';
+import styles from './Login.module.css';
 
 function Login() {
     // const user = useSelector(state => state.user);
@@ -71,12 +71,12 @@ function Login() {
     return ( 
         <>
             <Navbar />
-            <div className="login">
-                <div className="loginContainer">
-                    <div className="loginContent">
+            <div className={styles.login}>
+                <div className={styles.loginContainer}>
+                    <div className={styles.loginContent}>
                         <h2 className="titleGlobal">Sign In</h2>
                         <div>
-                            <div className="loginInput">
+                            <div className={styles.loginInput}>
                                 <input 
                                     type="email" 
                                     placeholder="Email"
@@ -85,7 +85,7 @@ function Login() {
                                 ></input>
                                 <p>{validateMsg.email}</p>
                             </div>
-                            <div className="loginInput">
+                            <div className={styles.loginInput}>
                                 <input
                                     type="password"
                                     placeholder="Password"
@@ -95,10 +95,10 @@ function Login() {
                                 <p>{validateMsg.password}</p>
                             </div>
                         </div>
-                            <button type="submit" className="loginBtn" onClick={onSubmit}>SIGN IN</button>
-                        <div className="createAccount">
+                            <button type="submit" className={styles.loginBtn} onClick={onSubmit}>SIGN IN</button>
+                        <div className={styles.createAccount}>
                             <p className="titleGlobal">Create an account?</p>
-                            <span onClick={() => navigate('/register')} className="linkSignUp">Sign up</span>
+                            <span onClick={() => navigate('/register')} className={styles.linkSignUp}>Sign up</span>
                         </div>
                     </div>
                 </div>

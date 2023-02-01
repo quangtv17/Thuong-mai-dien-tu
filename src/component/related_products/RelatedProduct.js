@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ProductsContext from "../productsContext/ProductsContext";
-import './relatedProduct.css';
+import styles from './RelatedProduct.module.css';
 
 function RelatedProduct(props) {
     const productRelate = useContext(ProductsContext); //lấy dữ liệu từ ProductsContext
@@ -22,9 +22,9 @@ function RelatedProduct(props) {
     }, [props.props, productRelate.products]);
 
     return (
-        <div className='realted_product'>
+        <div className={styles.realted_product}>
             {relate && relate.map(item => (
-                <div key={item._id.$oid} className='realted_product__detail'>
+                <div key={item._id.$oid} className={styles.realted_product__detail}>
                     <Link to={`/detail/${item._id.$oid}`}>
                         <img 
                             src={item.img1} 

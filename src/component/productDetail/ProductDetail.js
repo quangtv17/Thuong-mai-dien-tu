@@ -9,7 +9,7 @@ import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import RelatedProduct from "../related_products/RelatedProduct";
 import ProductsContext from "../productsContext/ProductsContext";
-import './productDetail.css';
+import styles from './ProductDetail.module.css';
 
 function ProductDetail() {
     const {id} = useParams(); 
@@ -63,12 +63,12 @@ function ProductDetail() {
     return (
         <>
             <Navbar />
-            <div className="productDetail">
+            <div className={styles.productDetail}>
                 {productDetail.loading ? <Loading /> :
-                    <div className="productDetailContainer">
-                        <div className="productDetailItem">
-                            <div className="productDetailImg">
-                                <div className="productDetailImgList">
+                    <div className={styles.productDetailContainer}>
+                        <div className={styles.productDetailItem}>
+                            <div className={styles.productDetailImg}>
+                                <div className={styles.productDetailImgList}>
                                     <img 
                                         src={itemData.img1} 
                                         alt={itemData.name} width={'50px'} 
@@ -98,7 +98,7 @@ function ProductDetail() {
                                         }} 
                                     />
                                 </div>
-                                <div className="ImgTotal">
+                                <div className={styles.ImgTotal}>
                                     <img
                                         src={img || itemData.img1}
                                         alt={itemData.name}
@@ -108,33 +108,27 @@ function ProductDetail() {
                                 </div>
                                 
                             </div>
-                            <div className="productDetailList">
+                            <div className={styles.productDetailList}>
                                 <h4>{itemData.name}</h4>
                                 <h6 className="titleColor">{Intl.NumberFormat('vi').format(itemData.price)} VND</h6>
                                 <p className="titleColor">{itemData.short_desc}</p>
-                                <div className="productDetailListCategory">
+                                <div className={styles.productDetailListCategory}>
                                     <h6>CATEGORY:</h6>
                                     <p className="titleColor">{itemData.category}</p>
                                 </div>
-                                <div className="productQuantity">
-                                    <input type="number" placeholder="QUANTITY"></input>
-                                    <div className="productQuantityIcon">
-                                        <FontAwesomeIcon icon={faCaretLeft} className="icon" onClick={() => handleQuantity('dec')}/>
-                                        <p>{quantity}</p>
-                                        <FontAwesomeIcon icon={faCaretRight} className="icon" onClick={() => handleQuantity('inc')}/>
-                                    </div>
-                                    <button onClick={() => handleAddCart(itemData)}>Add to cart</button>
-                                </div>
+                                
+                                <button className={styles.addCartBtn} onClick={() => handleAddCart(itemData)}>Add to cart</button>
+                                
                             </div>
                         </div>
-                        <div className="productDescription">
+                        <div className={styles.productDescription}>
                             <h6>DESCRIPTION</h6>
                             <h6>PRODUCT DESCRIPTION</h6>
                             {long_desc_1.map(item => (
                                 <p className="titleColor" key={item}>{item}</p>
                                 ))}
                         </div>
-                        <div className="relatedProduct">
+                        <div className={styles.relatedProduct}>
                             <h6>REALTED PRODUCTS</h6>
                             <RelatedProduct props={itemData.category}/>
                         </div>

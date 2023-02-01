@@ -4,7 +4,7 @@ import { popupActions } from "../../redux/popup";
 import ProductService from "./productService/ProductService";
 import ProductPopup from "../productPopup/ProductPopup";
 import ProductsContext from "../productsContext/ProductsContext";
-import './productLists.css';
+import styles from './ProductLists.module.css';
 
 function ProductLists () {
     const productLists = useContext(ProductsContext); //lấy dữ liệu từ ProductsContext
@@ -21,15 +21,15 @@ function ProductLists () {
     };
 
     return ( 
-        <div className="productLists">
-            <div className="productListsContainer">
-                <div className="productListsTitle">
+        <div className={styles.productLists}>
+            <div className={styles.productListsContainer}>
+                <div className={styles.productListsTitle}>
                     <h6 className="titleColor">MADE THE HARD WAY</h6>
                     <h5>TOP TRENDING PRODUCTS</h5>
                 </div>
-                <div className="productListsContent">
+                <div className={styles.productListsContent}>
                     {productLists.loading ? <Loading /> : productLists.products.map(item => (
-                        <div className="productItem" key={item._id.$oid}>
+                        <div className={styles.productItem} key={item._id.$oid}>
                             <img 
                                 src={item.img1} 
                                 alt={item.name} 
@@ -47,7 +47,7 @@ function ProductLists () {
                                 }} 
                             />
                             
-                            <div className="productItemDetail">
+                            <div className={styles.productItemDetail}>
                                 <h6>{item.name}</h6>
                                 <h6 className="titleColor">{Intl.NumberFormat('vi').format(item.price)} VND</h6>
                             </div>

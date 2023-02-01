@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import isEmpty from 'validator/lib/isEmpty';
 import isEmail from 'validator/lib/isEmail';
 import Navbar from '../navbar/Navbar';
-import './checkout.css';
+import styles from './Checkout.module.css';
 
 function Checkout() {
     const cart = useSelector(state => state.cart);
@@ -43,7 +43,7 @@ function Checkout() {
         // console.log(e.target.value);
     }
 
-    //Hàm validate form
+    //validate form
     const validateAll = () => {
         const msg = {}
         if(isEmpty(fullname)) {
@@ -88,12 +88,12 @@ function Checkout() {
     return ( 
         <>
             <Navbar />
-            <div className="checkout">
-                <div className="checkoutContainer">
-                    <div className="checkoutContent">
-                        <div className="checkoutBanner">
+            <div className={styles.checkout}>
+                <div className={styles.checkoutContainer}>
+                    <div className={styles.checkoutContent}>
+                        <div className={styles.checkoutBanner}>
                             <h3>CHECKOUT</h3>
-                            <div className="checkoutBannerTitle">
+                            <div className={styles.checkoutBannerTitle}>
                                 <h6>HOME</h6>
                                 <span>/</span>
                                 <h6>CART</h6>
@@ -101,10 +101,10 @@ function Checkout() {
                                 <h6>CHECKOUT</h6>
                             </div>
                         </div>
-                        <div className="checkoutbilling">
-                            <div className="checkoutBillingContainer">
+                        <div className={styles.checkoutBilling}>
+                            <div className={styles.checkoutBillingContainer}>
                                 <h5>BILLING DETAILS</h5>
-                                <div className="checkoutInput">
+                                <div className={styles.checkoutInput}>
                                     <h6>FULL NAME:</h6>
                                     <input type="text" placeholder="Enter Your Full Name Here!" value={fullname} onChange={onChangeName}></input>
                                     <p>{validateMsg.fullname}</p>
@@ -118,17 +118,17 @@ function Checkout() {
                                     <input type="text" placeholder="Enter Your Address Here!" value={address} onChange={onChangeAddress}></input>
                                     <p>{validateMsg.address}</p>
                                 </div>
-                                <button className="checkoutBtn" onClick={handlerPlaceOrder}>Place order</button>
+                                <button className={styles.checkoutBtn} onClick={handlerPlaceOrder}>Place order</button>
                             </div>
-                            <div className="checkoutOrder">
+                            <div className={styles.checkoutOrder}>
                                 <h5>YOUR ORDER</h5>
                                 {cart.cartArr.map((cartItem, i) => (
-                                    <div className="checkoutProduct" key={i}>
+                                    <div className={styles.checkoutProduct} key={i}>
                                         <h6>{cartItem.name}</h6>
                                         <h6>{Intl.NumberFormat('vi').format(cartItem.price)} VND x {cartItem.quantity}</h6>
                                     </div>
                                 ))}
-                                <div className="checkoutTotal">
+                                <div className={styles.checkoutTotal}>
                                     <h6>TOTAL</h6>
                                     <h6>{Intl.NumberFormat('vi').format(cart.cartTotalAmount)} VND</h6>
                                 </div>

@@ -43,7 +43,7 @@
     padding: 3px;
 }
 
-.checkoutbilling {
+.checkoutBilling {
     width: 100%;
     display: grid;
     grid-template-columns: 60% 40%;

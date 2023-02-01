@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from '../../redux/auth';
-import './navbar.css';
-
+import styles from './Navbar.module.css';
 
 function Navbar() {
     const user = JSON.parse(localStorage.getItem('currentLogin')) || {};
@@ -23,16 +22,16 @@ function Navbar() {
     }, [user]);
 
     return ( 
-        <div className="navbar">
-            <div className="navbarContainer">
-                <div className="navbarContent">
-                    <Link to='/' className="navHome">Home</Link>
-                    <Link to='/shop' className="navShop">Shop</Link>
+        <div className={styles.navbar}>
+            <div className={styles.navbarContainer}>
+                <div className={styles.navbarContent}>
+                    <Link to='/' className={styles.navHome}>Home</Link>
+                    <Link to='/shop' className={styles.navShop}>Shop</Link>
                 </div>
-                <div className="navbarTitle">
+                <div className={styles.navbarTitle}>
                     <h2>BOUTIQUE</h2>
                 </div>
-                <div className="navbarItem">
+                <div className={styles.navbarItem}>
                     <div>
                         <svg 
                             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +46,7 @@ function Navbar() {
                             />
                         </svg>
                         
-                        <Link to='/cart' className="navCart">Cart</Link>
+                        <Link to='/cart' className={styles.navCart}>Cart</Link>
                     </div>
                     
                     {userName ? (
@@ -65,7 +64,7 @@ function Navbar() {
                                 />
                             </svg>
                             <span style={{color:'green'}}>{userName}</span>
-                            <span className="navLogout" onClick={handleLogout}>Logout</span>
+                            <span className={styles.navLogout} onClick={handleLogout}>Logout</span>
                         </div>
                     ) : (
                         <div>
@@ -82,7 +81,7 @@ function Navbar() {
                                 />
                             </svg>
 
-                            <Link to='/login' className="navLogin">Login</Link>
+                            <Link to='/login' className={styles.navLogin}>Login</Link>
                         </div>
                     )}
                     

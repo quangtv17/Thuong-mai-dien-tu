@@ -5,7 +5,7 @@ import Macbook from '../../Images/product_2.png';
 import Ipad from '../../Images/product_3.png';
 import ApWatch from '../../Images/product_4.png';
 import AirPods from '../../Images/product_5.png';
-import styles from './product.module.css';
+import styles from './Product.module.css';
 
 function Product() {
     return ( 

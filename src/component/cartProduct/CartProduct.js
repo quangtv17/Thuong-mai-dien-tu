@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { cartActions } from '../../redux/cartRedux';
-import './cartProduct.css';
+import styles from './CartProduct.module.css';
 
 
 function CartProduct() {
@@ -27,16 +27,16 @@ function CartProduct() {
     }
 
     return (
-        <div className="cart">
-            <div className="cartContainer">
-                <div className="cartBanner">
+        <div className={styles.cart}>
+            <div className={styles.cartContainer}>
+                <div className={styles.cartBanner}>
                     <h2>CART</h2>
                     <h4 className="titleColor">CART</h4>
                 </div>
                 {cart.cartArr.length === 0 ? (
-                    <div className="cartEmpty">
+                    <div className={styles.cartEmpty}>
                         <p>Your cart is currently empty!</p>
-                        <div className="startShopping">
+                        <div className={styles.startShopping}>
                             <svg 
                                 xmlns="http://www.w3.org/2000/svg" 
                                 width="16" 
@@ -53,12 +53,12 @@ function CartProduct() {
                         </div>
                     </div>
                 ) : (
-                    <div className="cartContent">
+                    <div className={styles.cartContent}>
                         <h2>SHOPPING CART</h2>
-                        <div className="cartProductItems">
-                            <div className="cartItems">
-                                <div className="cartItem">
-                                    <div className="title">
+                        <div className={styles.cartProductItems}>
+                            <div className={styles.cartItems}>
+                                <div className={styles.cartItem}>
+                                    <div className={styles.title}>
                                         <h5>IMAGE</h5>
                                         <h5>PRODUCT</h5>
                                         <h5>PRICE</h5>
@@ -67,11 +67,11 @@ function CartProduct() {
                                         <h5>REMOVE</h5>
                                     </div>
                                     {cart.cartArr.map(cartItem => (
-                                        <div className="cartProduct" key={cartItem._id.$oid}>
+                                        <div className={styles.cartProduct} key={cartItem._id.$oid}>
                                                 <img src={cartItem.img1} alt={cartItem.name} width={'70px'} height={'80px'}/>
                                                 <h6>{cartItem.name}</h6>
                                                 <h6>{Intl.NumberFormat('vi').format(cartItem.price)} VND</h6>
-                                                <div className="cartQuantity">
+                                                <div className={styles.cartQuantity}>
                                                     {/* Giảm số lượng */}
                                                     <svg 
                                                         xmlns="http://www.w3.org/2000/svg" 
@@ -122,8 +122,8 @@ function CartProduct() {
                                                 </svg>
                                         </div>
                                     ))}
-                                    <div className='backAndNext'>
-                                        <div className="continueShopping">
+                                    <div className={styles.backAndNext}>
+                                        <div className={styles.continueShopping}>
                                             <svg 
                                                 xmlns="http://www.w3.org/2000/svg" 
                                                 width="15" 
@@ -138,7 +138,7 @@ function CartProduct() {
                                             </svg>
                                             <h6 onClick={() => navigate('/shop')}>Continue shopping</h6>
                                         </div>
-                                        <div className='cartCheckout'>
+                                        <div className={styles.cartCheckout}>
                                             <h6 onClick={() => navigate('/checkout')}>Proceed to checkout</h6>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -155,14 +155,14 @@ function CartProduct() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='cartTotal'>
-                                    <div className='cartTotalContainer'>
+                                <div className={styles.cartTotal}>
+                                    <div className={styles.cartTotalContainer}>
                                         <h3>CART TOTAL</h3>
-                                        <div className='SubTotal'>
+                                        <div className={styles.SubTotal}>
                                             <h6>SUBTOTAL</h6>
                                             <span>{Intl.NumberFormat('vi').format(cart.cartTotalAmount)} VND</span>
                                         </div>
-                                        <div className='total'>
+                                        <div className={styles.total}>
                                             <h6>TOTAL</h6>
                                             <span>{Intl.NumberFormat('vi').format(cart.cartTotalAmount)} VND</span>
                                         </div>

@@ -1,11 +1,11 @@
 import React from "react";
-import './footer.css';
+import styles from './Footer.module.css';
 
 function Footer() {
     return ( 
-        <div className="footer">
-            <div className="footerContainer">
-                <div className="customerServices">
+        <div className={styles.footer}>
+            <div className={styles.footerContainer}>
+                <div className={styles.customerServices}>
                     <h6>CUSTOMER SERVICES</h6>
                     <div className="titleGlobal">
                         <p>Help & Contact Us</p>
@@ -14,7 +14,7 @@ function Footer() {
                         <p>Terms & Conditions</p>
                     </div>
                 </div>
-                <div className="company">
+                <div className={styles.company}>
                     <h6>COMPANY</h6>
                     <div className="titleGlobal">
                         <p>What We Do</p>
@@ -23,7 +23,7 @@ function Footer() {
                         <p>FAQs</p>
                     </div>
                 </div>
-                <div className="socialMedia">
+                <div className={styles.socialMedia}>
                     <h6>SOCIAL MEDIA</h6>
                     <div className="titleGlobal">
                         <p>Twitter</p>
